@@ -49,7 +49,7 @@ def payment(request):
                 purpose = product.name,
                 buyer_name=customer.user,
                 email=customer.user.email,
-                redirect_url='https://buynotes.vercel.app/payment-success',
+                redirect_url='https://buynotes.vercel.app/payment-success/'
             )
             # print(response)
 
