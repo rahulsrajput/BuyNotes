@@ -24,4 +24,4 @@ class Products(BaseModel):
     price = models.DecimalField(max_digits=7, blank=False, null=False, decimal_places=2)
     discount = models.DecimalField(max_digits=2, decimal_places=0, null=True , blank=True)
     image = models.ImageField(null=False, blank=False, upload_to='media/03_BuyNotes')
-    file = models.FileField(null=False, blank=False , upload_to='files/03_BuyNotes')
+    file = models.FileField(null=True, blank=True , upload_to='files/03_BuyNotes')
