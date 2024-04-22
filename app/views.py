@@ -40,4 +40,4 @@ def dashboard(request):
         return render(request, 'app/dashboard.html', context)
     
     else:
-        return HttpResponseRedirect('/login')
+        return HttpResponseRedirect('/login/')

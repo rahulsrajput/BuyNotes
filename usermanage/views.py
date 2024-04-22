@@ -59,7 +59,7 @@ def registerUser(request):
 
                 Customer.objects.create(user=user)
 
-                return HttpResponseRedirect('/login')
+                return HttpResponseRedirect('/login/')
         
         context = {
             'form':form

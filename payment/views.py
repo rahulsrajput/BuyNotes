@@ -77,7 +77,7 @@ def payment(request):
         }
         return render(request, 'payment/payment.html',context)            
 
-    return HttpResponseRedirect('/products')
+    return HttpResponseRedirect('/products/')
 
    
 
