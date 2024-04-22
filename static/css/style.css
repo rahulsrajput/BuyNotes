@@ -1,0 +1,228 @@
+/* 2B2D42 8D99AE EDF2F4 EF233C D90429 */
+
+
+.navbar-brand {
+    font-family: 'Exo 2', 'sans-serif';
+    color: #2b2d42;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #2b2d42;
+    font-family: 'Exo 2', 'sans-serif';
+    font-weight: 500;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #EF233C;
+}
+
+.navbar .navbar-toggler {
+    color: #2b2d42;
+}
+
+.navbar .navbar-brand {
+    img {
+        width: 40px;
+        left: 15px;
+        background-size: contain;
+    }
+}
+
+
+
+/* home */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    margin: 0;
+}
+
+.main {
+    text-align: center;
+    max-width: 600px;
+    font-family: 'Exo 2', 'sans-serif';
+    font-weight: 500;
+    color: #2b2d42;
+    padding: 20px 0;
+}
+
+.main p {
+    margin-bottom: 20px;
+}
+
+.btn-fixed-width {
+    width: 200px;
+    /* Adjust the width as needed */
+}
+
+
+/*  */
+img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* layout */
+.container {
+    max-width: 982px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+
+/* cards */
+.custom-card {
+    max-width: 380px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 20px;
+    border-radius: 1%;
+    font-family: 'Exo 2', 'sans-serif';
+    color: #121212;
+    background-color: transparent !important;
+    /* Override default background color */
+    border: none !important;
+    /* Optionally remove border */
+    box-shadow: none !important;
+    /* Optionally remove box shadow */
+}
+
+
+.custom-card .form-group {
+    margin-bottom: 15px;
+}
+
+.custom-card .form-control {
+    border-radius: 0;
+    background-color: transparent;
+    border-color: #121212;
+    color: #121212;
+}
+
+.custom-card .form-control:focus {
+    border-color: #121212;
+    box-shadow: none;
+}
+
+.custom-card .btn-half-width {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.custom-card .btn {
+    font-family: 'Exo 2', 'sans-serif';
+    color: white;
+}
+
+
+.custom-card .btn:hover {
+
+    font-family: 'Exo 2', 'sans-serif';
+    color: white;
+}
+
+.custom-card .card-title {
+    text-align: center;
+    color: #121212;
+}
+
+
+/*  */
+.row .btn-half-width {
+    background-color: #121212;
+    margin-top: 5px;
+}
+
+.row .btn-half-width:hover {
+    background-color: #363636;
+    font-family: 'Exo 2', 'sans-serif';
+}
+
+
+/*  */
+.card {
+    min-height: 330px;
+}
+
+@media (max-width: 767px) {
+    .mt-sm-between-cols {
+        margin-top: 5rem !important;
+        /* Adjust as needed */
+    }
+}
+
+.card .btn {
+    letter-spacing: 1px;
+    word-spacing: 5px;
+}
+
+
+
+/*  */
+.hidden {
+    display: none;
+}
+
+/* Style for the text container */
+.clickable-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style for the text */
+.clickable {
+    cursor: pointer;
+    margin-bottom: 0;
+    flex-grow: 1;
+    /* Allow text to take remaining space */
+}
+
+/* Style for the dropdown icon */
+.dropdown-icon {
+    margin-left: 5px;
+    vertical-align: middle;
+    /* Align icon vertically with text */
+}
+
+
+
+/* payment success / failed */
+._failed{ border-bottom: solid 4px red !important; }
+._failed i{  color:red !important;  }
+
+._success {
+    padding: 45px;
+    width: 100%;
+    text-align: center;
+    margin: 40px auto;
+    border-bottom: solid 4px #28a745;
+}
+
+._success i {
+    font-size: 55px;
+    color: #28a745;
+}
+
+._success h2 {
+    margin-bottom: 12px;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+._success p {
+    margin-bottom: 0px;
+    font-size: 18px;
+    color: #495057;
+}

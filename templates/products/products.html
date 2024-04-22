@@ -1,0 +1,90 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load discount_tags %}
+{% block title %}Notes | BuyNotes{% endblock %}
+
+{% block content %}
+
+<div class="row mt-5 mb-5">
+
+    <!-- Filter -->
+    <div class="col-lg-3">
+        <h1>Filters</h1>
+        <form action="" method="get">
+            
+            {% for category in categorys %}
+            <div class="form-check mt-4">
+                <label for=""><input class="form-check-input" type="radio" name="category" value="{{category.name}}">{{category.name}}</label>
+            </div>
+            {% endfor %}
+
+            <!-- css,js already done for dropdown -->
+            <div class="dropdown-1 mt-4">
+                <div class="clickable-container clickable" onclick="toggleList()">
+                    <span>Price</span>
+                    <span><i id="dropdownIcon" class="fas fa-chevron-down dropdown-icon"></i></span>
+                </div>
+                <ul id="myList" class="hidden">
+                    <div class="form-check">
+                        <label><input class="form-check-input" type="radio" name="priceRange" value="low-to-high">Low To High</label>
+                    </div>
+                    <div class="form-check mt-3">
+                        <label><input class="form-check-input" type="radio" name="priceRange" value="high-to-low">High To Low</label>
+                    </div>
+                </ul>
+            </div>
+
+            <button type="submit" class="btn btn-block btn-dark mt-4">Apply</button>
+        </form>
+    </div>
+
+
+    <!-- search bar, notes-items -->
+    <div class="col mt-sm-between-cols">
+        <h1>Products</h1>
+
+        <!-- search bar -->
+        <form action="" method="get">
+            <div class="input-group">
+                <div class="form-outline" data-mdb-input-init>
+                    <input type="search" id="form1" class="form-control" name="search" />
+                    <label class="form-label" for="form1">Search</label>
+                </div>
+                <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+
+
+        <!-- notes-card -->
+        <div class="row">
+
+            {% for product in products %}
+            <div class="col-sm-4">
+                <div class="card mt-4">
+                    <img class="card-img-top" src="{{product.image.url}}" alt=" image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <div class="card-text text-danger">{{product.discount}}%OFF</div>
+                    </div>
+                                        
+                    <form action="{% url 'payment' %}" method="post">
+                        {% csrf_token %}
+
+                        {% if product.discount <= 0 %}
+                        <button  class="btn btn-block btn-success" value={{product.uuid}} name='uuid' type="submit">Buy at ₹{{product.price}}</button>
+                        {% else %}
+                        <button  class="btn btn-block btn-success" value={{product.uuid}} name='uuid' type="submit">Buy at ₹{% discountPrice product.price product.discount %} <del>₹{{product.price}}</del></button>
+                        {% endif %}
+                    </form>
+
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

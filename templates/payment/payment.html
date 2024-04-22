@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% load static %}
+{% load discount_tags %}
+{% block title %}Payment | BuyNotes{% endblock %}
+
+{% block content %}
+<div class="row mt-5 mb-5">
+    
+    <div class="col-lg-8"> 
+        <p style="color: #EF233C;">Notice: Do not Refresh/Reload this page</p>  
+        
+        <!-- DROPDOWN's -->
+        <div class="dropdown-1">
+            <div class="clickable-container clickable" onclick="toggleList()">
+                <span>What you will get</span>
+                <span><i id="dropdownIcon" class="fas fa-chevron-down dropdown-icon"></i></span>
+            </div>
+            <ul id="myList" class="hidden">
+                <li>Material contains All described Documents and Source Code</li>
+                <li>Downloaded Content is a Zip File which you need to extract using any Unzip Software e.g. Winzip, Winrar, 7-zip or Windows Default extractor etc.</li>
+            </ul>
+        </div>
+
+        <div class="dropdown-2 mt-3">
+            <div class="clickable-container clickable" onclick="toggleList1()">
+                <span>Terms and Conditions</span>
+                <span><i id="dropdownIcon1" class="fas fa-chevron-down dropdown-icon"></i></span>
+            </div>
+            <ul id="myList1" class="hidden">
+                <li>As It's Digital Product so there will be no No Return & Refund. However if you make duplicate payment or buy the same product two times we will refund the amount.</li>
+                <li>If you do not receive the Notes/Project after making payment successfully Kindly contact us on Whatsapp +919109683320 We will send manually.</li>
+                <li>You can't resell notes. If found, legal action will be taken.</li>
+            </ul>
+        </div>
+
+
+        <!-- payment button -->
+        <div class="mt-5">
+            <h2>Payment:</h2>
+            <h6>Registration and Login Required *</h6>
+            <form action="{{longurl}}" target="_blank" method="get">
+                {% if request.user.is_authenticated %}
+                <button type="submit" class="btn btn-block btn-dark">Pay with Instamojo</button>
+                {% else %}
+                <a href="{% url 'loginUser' %}" class="btn btn-block btn-dark">Pay with Instamojo</a>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+
+
+    <!-- card -->
+    <div class="col mt-5 mt-lg-0"><!-- Added mt-3 mt-lg-0 to add top margin on small screens -->
+        <div class="card">
+            <img class="card-img-top" src="{{product.image.url}}" alt="{{product.name}} image">
+            <div class="card-body">
+                <p class="card-title">{{product.name}}</p>
+                <h4>Price Details:</h4>
+                <div class="d-flex justify-content-between">
+                    <p>Price:</p>
+                    <p>₹{{product.price}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Discount:</p>
+                    <p>{{product.discount}}%</p>
+                </div>       
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <h4>Net Payable:</h4>
+                <h4>₹{% discountPrice product.price product.discount %}</h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

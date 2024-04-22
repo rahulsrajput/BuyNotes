@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}Payment Failed | BuyNotes{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="message-box _success _failed">
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+                <p class="mt-4">Your transaction has been Failed. Try again</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
