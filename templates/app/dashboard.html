@@ -33,7 +33,7 @@
                     {% if request.user.is_authenticated %}
                     {% for order in order_objs %}
                     <tr>
-                        <form action="https://res.cloudinary.com/dmtucuzom/image/upload/v1/fl_attachment/{{order.product.file}}" method="get">
+                        <form action="https://res.cloudinary.com/dmtucuzom/image/upload/fl_attachment/{{order.product.file}}" method="get">
                             <td><button type="submit" class="btn btn-sm btn-outline-success">Download</button></td>
                         </form>
                         <td colspan="2">{{order.product.name}}</td>
