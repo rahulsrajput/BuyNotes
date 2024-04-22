@@ -25,7 +25,7 @@ def dashboard(request):
             form = UpdateForm(request.POST, instance=request.user)
             if form.is_valid():
                 form.save()
-                return HttpResponseRedirect('/dashboard')
+                return HttpResponseRedirect('/dashboard/')
                     
 
         user = request.user
